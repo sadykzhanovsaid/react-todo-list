@@ -23,6 +23,16 @@ function Popup({
             }
             const updated = [...folders, newFolder]
             setFolders(updated)
+            setTitle("")
+            setOpenPopup(false)
+        }
+    }
+
+    function handleKeyDown(e) {
+        if (e.key === "Enter") {
+            addFolder(title)
+            setTitle("")
+            setOpenPopup(false)
         }
     }
 
@@ -35,8 +45,14 @@ function Popup({
     return (
         <div className={openPopup ? "popup__active" : "popup"}>
             <img onClick={() => setOpenPopup(false)} src={closeIcon} alt="close icon" className="popup__close"/>
-            <input onChange={(e) => setTitle(e.target.value)} className="popup__input" type="text"
-                   placeholder="Название папки"/>
+            <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="popup__input"
+                type="text"
+                placeholder="Название папки"
+                onKeyDown={(e) => handleKeyDown(e)}
+            />
             <div className="popup__colors">
                 <div onClick={() => changeColor("rgba(201, 209, 211, 1)")}
                      className={color.background !== "rgba(201, 209, 211, 1)" ? "popup__color popup__color1" : "popup__color popup__color1 popup__color1-active"}></div>
