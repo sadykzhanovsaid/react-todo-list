@@ -1,10 +1,13 @@
-import "react"
+import {useState} from "react"
 import "./Tasks.css"
 import Task from "../task/Task.jsx"
+import Added from "../added/Added.jsx";
 import changeIcon from "/public/tasks/change.svg"
 import addIcon from "/public/tasks/add.svg"
 
 function Tasks() {
+    const [add, setAdd] = useState(false)
+
     return (
         <div className="tasks">
             <div className="tasks__title">
@@ -20,10 +23,10 @@ function Tasks() {
                 <Task title="ReactJS Hooks (useState, useReducer, useEffect и т.д.)" completed={false}/>
                 <Task title="Redux (redux-observable, redux-saga)" completed={false}/>
             </div>
-            <button className="tasks__add">
+            {add ? <Added add={add} setAdd={setAdd}/> : <button onClick={() => setAdd(true)} className="tasks__add">
                 <img src={addIcon} alt="add icon" className="tasks__add-icon"/>
                 Новая задача
-            </button>
+            </button>}
         </div>
     )
 }

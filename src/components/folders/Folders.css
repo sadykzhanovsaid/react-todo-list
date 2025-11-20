@@ -58,6 +58,6 @@
 @media (max-width: 479px) {
     .folders {
         position: absolute;
-        left: 100%;
+        right: 100%;
     }
 }
