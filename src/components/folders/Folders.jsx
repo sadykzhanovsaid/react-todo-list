@@ -1,10 +1,11 @@
 import "react"
 import "./Folders.css"
 import Folder from "../folder/Folder.jsx"
+import Popup from "../popup/Popup.jsx"
 import menuIcon from "/public/folders/menu.svg"
 import addIcon from "/public/folders/add.svg"
 
-function Folders() {
+function Folders({open, setOpen}) {
     return (
         <div className="folders">
             <button className="folders__all">
@@ -18,10 +19,12 @@ function Folders() {
                 <Folder color="rgba(255, 187, 204, 1)" title="Книги"/>
             </div>
 
-            <button className="folders__add">
+            <button className="folders__add" onClick={() => setOpen(true)}>
                 <img src={addIcon} alt="add icon" className="folders__add-icon"/>
                 Добавить папку
             </button>
+
+            <Popup open={open} setOpen={setOpen}/>
         </div>
     )
 }
