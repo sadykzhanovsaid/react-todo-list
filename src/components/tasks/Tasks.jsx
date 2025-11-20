@@ -5,9 +5,7 @@ import Added from "../added/Added.jsx";
 import changeIcon from "/public/tasks/change.svg"
 import addIcon from "/public/tasks/add.svg"
 
-function Tasks() {
-    const [add, setAdd] = useState(false)
-
+function Tasks({add, setAdd}) {
     return (
         <div className="tasks">
             <div className="tasks__title">

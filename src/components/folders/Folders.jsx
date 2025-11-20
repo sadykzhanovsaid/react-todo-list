@@ -5,7 +5,12 @@ import Popup from "../popup/Popup.jsx"
 import menuIcon from "/public/folders/menu.svg"
 import addIcon from "/public/folders/add.svg"
 
-function Folders({openPopup, setOpenPopup}) {
+function Folders({
+                     openPopup,
+                     setOpenPopup,
+                     folders,
+                     setFolders
+                 }) {
     return (
         <div className="folders">
             <button className="folders__all">
@@ -24,7 +29,12 @@ function Folders({openPopup, setOpenPopup}) {
                 Добавить папку
             </button>
 
-            <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}/>
+            <Popup
+                openPopup={openPopup}
+                setOpenPopup={setOpenPopup}
+                folders={folders}
+                setFolders={setFolders}
+            />
         </div>
     )
 }

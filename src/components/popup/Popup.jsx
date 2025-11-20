@@ -2,10 +2,29 @@ import React, {useState} from "react"
 import "./Popup.css"
 import closeIcon from "/public/popup/close.svg"
 
-function Popup({openPopup, setOpenPopup}) {
+function Popup({
+                   openPopup,
+                   setOpenPopup,
+                   folders,
+                   setFolders
+               }) {
+    const [title, setTitle] = useState("")
     const [color, setColor] = useState({
         background: "rgba(201, 209, 211, 1)"
     })
+
+    function addFolder(title) {
+        if (title.trim()) {
+            const newFolder = {
+                id: Date.now(),
+                title,
+                color,
+                tasks: []
+            }
+            const updated = [...folders, newFolder]
+            setFolders(updated)
+        }
+    }
 
     function changeColor(rgba) {
         setColor({
@@ -16,7 +35,8 @@ function Popup({openPopup, setOpenPopup}) {
     return (
         <div className={openPopup ? "popup__active" : "popup"}>
             <img onClick={() => setOpenPopup(false)} src={closeIcon} alt="close icon" className="popup__close"/>
-            <input className="popup__input" type="text" placeholder="Название папки"/>
+            <input onChange={(e) => setTitle(e.target.value)} className="popup__input" type="text"
+                   placeholder="Название папки"/>
             <div className="popup__colors">
                 <div onClick={() => changeColor("rgba(201, 209, 211, 1)")}
                      className={color.background !== "rgba(201, 209, 211, 1)" ? "popup__color popup__color1" : "popup__color popup__color1 popup__color1-active"}></div>
@@ -35,7 +55,7 @@ function Popup({openPopup, setOpenPopup}) {
                 <div onClick={() => changeColor("rgba(255, 100, 100, 1)")}
                      className={color.background !== "rgba(255, 100, 100, 1)" ? "popup__color popup__color8" : "popup__color popup__color8 popup__color8-active"}></div>
             </div>
-            <button className="popup__add">Добавить</button>
+            <button className="popup__add" onClick={() => addFolder(title)}>Добавить</button>
         </div>
     );
 }
