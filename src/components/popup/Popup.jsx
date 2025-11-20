@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import "./Popup.css"
 import closeIcon from "/public/popup/close.svg"
 
-function Popup({open, setOpen}) {
+function Popup({openPopup, setOpenPopup}) {
     const [color, setColor] = useState({
         background: "rgba(201, 209, 211, 1)"
     })
@@ -14,8 +14,8 @@ function Popup({open, setOpen}) {
     }
 
     return (
-        <div className={open ? "popup__active" : "popup"}>
-            <img onClick={() => setOpen(false)} src={closeIcon} alt="close icon" className="popup__close"/>
+        <div className={openPopup ? "popup__active" : "popup"}>
+            <img onClick={() => setOpenPopup(false)} src={closeIcon} alt="close icon" className="popup__close"/>
             <input className="popup__input" type="text" placeholder="Название папки"/>
             <div className="popup__colors">
                 <div onClick={() => changeColor("rgba(201, 209, 211, 1)")}

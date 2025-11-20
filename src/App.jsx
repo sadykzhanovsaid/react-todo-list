@@ -4,10 +4,11 @@ import Folders from "./components/folders/Folders.jsx"
 import Tasks from "./components/tasks/Tasks.jsx"
 
 function App() {
-    const [open, setOpen] = useState(false)
+    const [openPopup, setOpenPopup] = useState(false)
+
     return (
         <>
-            <Folders open={open} setOpen={setOpen}/>
+            <Folders openPopup={openPopup} setOpenPopup={setOpenPopup}/>
             <Tasks/>
         </>
     )

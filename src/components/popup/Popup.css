@@ -151,3 +151,10 @@
 .popup__add:hover {
     cursor: pointer;
 }
+
+@media (max-height: 479px) {
+    .popup__active {
+        left: 15px;
+        bottom: 15px;
+    }
+}
