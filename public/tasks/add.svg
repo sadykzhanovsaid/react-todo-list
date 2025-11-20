@@ -1,0 +1,9 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16.000000"
+     height="16.000000" fill="none">
+    <g id="Group">
+        <path id="Vector" d="M0 0L14 0" stroke="rgb(180,180,180)" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" transform="matrix(0,1,-1,0,8,1)"/>
+        <path id="Vector" d="M1 8L15 8" stroke="rgb(180,180,180)" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2"/>
+    </g>
+</svg>

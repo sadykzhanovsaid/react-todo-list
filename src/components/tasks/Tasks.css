@@ -1,5 +1,65 @@
-.main {
+.tasks {
     width: 75%;
     min-height: 100vh;
-    padding: 55px 20px 0 50px;
+    padding: 50px 20px 20px 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 479px) {
+    .tasks {
+        width: 100%;
+        padding-right: 50px;
+    }
+}
+
+.tasks__title {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    color: rgba(100, 196, 237, 1);
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.tasks__title > button {
+    margin-top: 5px;
+    border: none;
+    background: none;
+}
+
+.tasks__line {
+    width: 100%;
+    height: 1px;
+    background: rgba(242, 242, 242, 1);
+}
+
+.tasks__ {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tasks__add {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 20px;
+    background: none;
+    border: none;
+
+    color: rgba(180, 180, 180, 1);
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.tasks__add:hover {
+    cursor: pointer;
 }
