@@ -1,10 +1,13 @@
 import "react"
 import "./App.css"
+import Folders from "./components/folders/Folders.jsx"
+import Tasks from "./components/tasks/Tasks.jsx"
 
 function App() {
     return (
         <>
-            <h1>Hello todo</h1>
+            <Folders/>
+            <Tasks/>
         </>
     )
 }
