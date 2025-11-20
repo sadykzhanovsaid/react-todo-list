@@ -20,7 +20,12 @@ function Folders({
 
             <div className="folders__list">
                 {folders.map((el) => {
-                    return <Folder el={el} key={el.id}/>
+                    return <Folder
+                        el={el}
+                        key={el.id}
+                        folders={folders}
+                        setFolders={setFolders}
+                    />
                 })}
             </div>
 
