@@ -10,7 +10,9 @@ function Folders({
                      setOpenPopup,
                      folders,
                      setFolders,
-                     updateFolderTitle
+                     updateFolderTitle,
+                     folderSelected,
+                     setFolderSelected
                  }) {
     return (
         <div className="folders">
@@ -27,6 +29,8 @@ function Folders({
                         folders={folders}
                         setFolders={setFolders}
                         updateFolderTitle={updateFolderTitle}
+                        folderSelected={folderSelected}
+                        setFolderSelected={setFolderSelected}
                     />
                 })}
             </div>
@@ -41,6 +45,8 @@ function Folders({
                 setOpenPopup={setOpenPopup}
                 folders={folders}
                 setFolders={setFolders}
+                folderSelected={folderSelected}
+                setFolderSelected={setFolderSelected}
             />
         </div>
     )

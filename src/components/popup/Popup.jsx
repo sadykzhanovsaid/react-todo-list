@@ -6,7 +6,9 @@ function Popup({
                    openPopup,
                    setOpenPopup,
                    folders,
-                   setFolders
+                   setFolders,
+                   folderSelected,
+                   setFolderSelected
                }) {
     const [title, setTitle] = useState("")
     const [color, setColor] = useState({
@@ -23,6 +25,7 @@ function Popup({
             }
             const updated = [...folders, newFolder]
             setFolders(updated)
+            setFolderSelected(newFolder.id)
             setTitle("")
             setOpenPopup(false)
         }

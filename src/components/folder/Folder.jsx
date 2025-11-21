@@ -6,15 +6,23 @@ function Folder({
                     el,
                     folders,
                     setFolders,
-                    updateFolderTitle
+                    updateFolderTitle,
+                    folderSelected,
+                    setFolderSelected,
                 }) {
 
-    function deleteFolder(id) {
+    function deleteFolder(id, e) {
+        e.stopPropagation();
         setFolders(folders.filter(el => el.id !== id))
+        if (folders.length >= 2) {
+            setFolderSelected("all")
+        } else {
+            setFolderSelected("")
+        }
     }
 
     return (
-        <div className="folder">
+        <div className="folder" onClick={() => setFolderSelected(el.id)}>
             <div className="folder__color" style={el.color}></div>
             <input
                 className="folder__title"
@@ -22,7 +30,7 @@ function Folder({
                 onChange={(e) => updateFolderTitle(e.target.value, el.id)}
             />
             <img
-                onClick={() => deleteFolder(el.id)}
+                onClick={(e) => deleteFolder(el.id, e)}
                 src={deleteIcon} alt="delete icon"
                 className="folder__icon"
             />
