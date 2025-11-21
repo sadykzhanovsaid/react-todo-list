@@ -5,7 +5,8 @@ import deleteIcon from "/public/folder/delete.svg"
 function Folder({
                     el,
                     folders,
-                    setFolders
+                    setFolders,
+                    updateFolderTitle
                 }) {
 
     function deleteFolder(id) {
@@ -15,7 +16,11 @@ function Folder({
     return (
         <div className="folder">
             <div className="folder__color" style={el.color}></div>
-            <p className="folder__title">{el.title}</p>
+            <input
+                className="folder__title"
+                value={el.title}
+                onChange={(e) => updateFolderTitle(e.target.value, el.id)}
+            />
             <img
                 onClick={() => deleteFolder(el.id)}
                 src={deleteIcon} alt="delete icon"

@@ -9,7 +9,8 @@ function Folders({
                      openPopup,
                      setOpenPopup,
                      folders,
-                     setFolders
+                     setFolders,
+                     updateFolderTitle
                  }) {
     return (
         <div className="folders">
@@ -25,6 +26,7 @@ function Folders({
                         key={el.id}
                         folders={folders}
                         setFolders={setFolders}
+                        updateFolderTitle={updateFolderTitle}
                     />
                 })}
             </div>

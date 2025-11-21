@@ -15,6 +15,21 @@ function App() {
         }
     }, [])
 
+    function updateFolderTitle(newTitle, id) {
+        if (newTitle.trim() === "") {
+            const updated = folders.filter(el => el.id !== id);
+            setFolders(updated);
+            // if (folders.length >= 2) {
+            //     setCategory("all")
+            // } else {
+            //     setCategory("")
+            // }
+            return;
+        }
+        const updated = folders.map(el => el.id === id ? {...el, title: newTitle} : el);
+        setFolders(updated);
+    }
+
     useEffect(() => {
         localStorage.setItem("folders", JSON.stringify(folders))
     }, [folders])
@@ -26,6 +41,7 @@ function App() {
                 setOpenPopup={setOpenPopup}
                 folders={folders}
                 setFolders={setFolders}
+                updateFolderTitle={updateFolderTitle}
             />
             <Tasks
                 add={add}

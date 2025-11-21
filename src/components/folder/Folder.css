@@ -29,6 +29,10 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+
+    outline: none;
+    border: none;
+    background: transparent;
 }
 
 .folder__icon {
