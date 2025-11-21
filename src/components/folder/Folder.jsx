@@ -22,7 +22,7 @@ function Folder({
     }
 
     return (
-        <div className="folder" onClick={() => setFolderSelected(el.id)}>
+        <div className={folderSelected === el.id ? "folder-active" : "folder"} onClick={() => setFolderSelected(el.id)}>
             <div className="folder__color" style={el.color}></div>
             <input
                 className="folder__title"

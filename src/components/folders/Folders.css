@@ -18,7 +18,7 @@
     align-items: center;
     column-gap: 10px;
     background: transparent;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 
     color: rgba(0, 0, 0, 1);
     font-family: "Roboto", sans-serif;
@@ -28,9 +28,28 @@
 }
 
 .folders__all:hover {
+    cursor: pointer;
+}
+
+.folders__all-active {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.03);
     background: rgba(255, 255, 255, 1);
     transition: all 0.3s ease;
+    width: 160px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.folders__all-active:hover {
     cursor: pointer;
 }
 

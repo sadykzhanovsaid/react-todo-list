@@ -15,6 +15,22 @@
     background: rgba(255, 255, 255, 1);
 }
 
+.folder-active {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    border-radius: 4px;
+}
+
+.folder-active:hover {
+    cursor: pointer;
+}
+
 .folder__color {
     width: 10px;
     height: 10px;
@@ -33,6 +49,7 @@
     outline: none;
     border: none;
     background: transparent;
+    cursor: default;
 }
 
 .folder__icon {
@@ -47,4 +64,8 @@
 .folder:hover .folder__icon {
     opacity: 1;
     transition: all 0.3s ease;
+}
+
+.folder-active .folder__icon {
+    opacity: 1;
 }

@@ -16,12 +16,12 @@ function Folders({
                  }) {
     return (
         <div className="folders">
-            <button className="folders__all">
+            {folders.length ? <button className={folderSelected === "all" ? "folders__all-active" : "folders__all"} onClick={() => setFolderSelected("all")}>
                 <img src={menuIcon} alt="menu icon" className="folders__all-icon"/>
                 Все задачи
-            </button>
+            </button> : null}
 
-            <div className="folders__list">
+            {folders.length ? <div className="folders__list">
                 {folders.map((el) => {
                     return <Folder
                         el={el}
@@ -33,7 +33,7 @@ function Folders({
                         setFolderSelected={setFolderSelected}
                     />
                 })}
-            </div>
+            </div> : null}
 
             <button className="folders__add" onClick={() => setOpenPopup(true)}>
                 <img src={addIcon} alt="add icon" className="folders__add-icon"/>
