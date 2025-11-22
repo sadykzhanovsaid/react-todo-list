@@ -1,0 +1,72 @@
+.taskAll {
+    width: 75%;
+    height: 100vh;
+    padding: 50px 20px 50px 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.taskAll::-webkit-scrollbar {
+    width: 0;
+}
+
+.taskAll__box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 479px) {
+    .taskAll {
+        padding: 50px;
+        width: 100%;
+    }
+}
+
+.taskAll__title {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    color: rgba(100, 196, 237, 1);
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.taskAll__title > input {
+    color: rgba(100, 196, 237, 1);
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+
+    width: 185px;
+    border: none;
+    outline: none;
+}
+
+.taskAll__title > button {
+    margin-top: 5px;
+    border: none;
+    background: none;
+}
+
+.taskAll__title > button:hover {
+    cursor: pointer;
+}
+
+.taskAll__line {
+    width: 100%;
+    height: 1px;
+    background: rgba(242, 242, 242, 1);
+}
+
+.taskAll__ {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

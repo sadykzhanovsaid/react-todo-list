@@ -1,0 +1,16 @@
+.empty {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty__title {
+    text-align: center;
+    color: rgba(201, 209, 211, 1);
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+}

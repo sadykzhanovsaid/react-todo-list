@@ -54,6 +54,9 @@ function App() {
             <Tasks
                 add={add}
                 setAdd={setAdd}
+                folderSelected={folderSelected}
+                folders={folders}
+                updateFolderTitle={updateFolderTitle}
             />
         </>
     )
