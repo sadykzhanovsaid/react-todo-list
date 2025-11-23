@@ -29,6 +29,23 @@ function Tasks({
             )
         );
     }
+
+    function toggleTaskCompleted(folderId, taskId) {
+        setFolders(el =>
+            el.map(folder =>
+                folder.id === folderId
+                    ? {
+                        ...folder,
+                        tasks: folder.tasks.map(task =>
+                            task.id === taskId
+                                ? { ...task, completed: !task.completed }
+                                : task
+                        )
+                    }
+                    : folder
+            )
+        );
+    }
     
     return (
         <>
@@ -37,6 +54,7 @@ function Tasks({
                     folders={folders}
                     updateFolderTitle={updateFolderTitle}
                     deleteTask={deleteTask}
+                    toggleTaskCompleted={toggleTaskCompleted}
                 /> :
                 folderSelected === "" ? <Empty/> :
                 <TaskMain
@@ -47,6 +65,7 @@ function Tasks({
                     setFolders={setFolders}
                     updateFolderTitle={updateFolderTitle}
                     deleteTask={deleteTask}
+                    toggleTaskCompleted={toggleTaskCompleted}
                 />
             }
         </>

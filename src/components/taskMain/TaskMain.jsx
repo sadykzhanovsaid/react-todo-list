@@ -12,7 +12,8 @@ function TaskMain({
                       folders,
                       setFolders,
                       updateFolderTitle,
-                      deleteTask
+                      deleteTask,
+                      toggleTaskCompleted
                   }) {
     const folderMain = folders.find(el => el.id === folderSelected)
     return (
@@ -35,6 +36,7 @@ function TaskMain({
                         key={el.id}
                         deleteTask={deleteTask}
                         folderId={folderMain.id}
+                        toggleTaskCompleted={toggleTaskCompleted}
                     />
                 })}
             </div>

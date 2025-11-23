@@ -6,11 +6,13 @@ import {FaCheck} from "react-icons/fa6"
 function Task({
                   el,
                   deleteTask,
-                  folderId
+                  folderId,
+                  toggleTaskCompleted
               }) {
     return (
         <div className="task">
             <button
+                onClick={() => toggleTaskCompleted(folderId, el.id)}
                 className={el.completed ? "task__completed-active" : "task__completed"}>
                 <FaCheck className={el.completed ? "task__completed-icon-active" : "task__completed-icon"}
                          size={11}/>

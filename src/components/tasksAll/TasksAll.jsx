@@ -8,7 +8,8 @@ import addIcon from "/public/tasks/add.svg"
 function TasksAll({
                       folders,
                       updateFolderTitle,
-                      deleteTask
+                      deleteTask,
+                      toggleTaskCompleted
                   }) {
     return (
         <div className="taskAll">
@@ -33,6 +34,7 @@ function TasksAll({
                                     key={el.id}
                                     deleteTask={deleteTask}
                                     folderId={elFolder.id}
+                                    toggleTaskCompleted={toggleTaskCompleted}
                                 />
                             })}
                         </div>
