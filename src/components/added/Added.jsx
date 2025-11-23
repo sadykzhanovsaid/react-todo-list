@@ -34,6 +34,13 @@ function Added({
         }
     };
 
+    function handleKeyDown(e) {
+        if (e.key === "Enter") {
+            addTask(title, folderMain.id)
+            setTitle("")
+        }
+    }
+
     return (
         <div className="added">
             <input
@@ -42,6 +49,7 @@ function Added({
                 placeholder="Текст задачи"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                onKeyDown={(e) => handleKeyDown(e)}
             />
             <div className="added__other">
                 <button onClick={() => addTask(title, folderMain.id)} className="added__add">Добавить задачу</button>
