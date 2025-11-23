@@ -7,18 +7,19 @@ import addIcon from "/public/tasks/add.svg"
 
 function TasksAll({
                       folders,
-                      updateFolderTitle
+                      updateFolderTitle,
+                      deleteTask
                   }) {
     return (
         <div className="taskAll">
-            {folders.map((el) => {
+            {folders.map((elFolder) => {
                 return (
-                    <div key={el.id} className="taskAll__box">
+                    <div key={elFolder.id} className="taskAll__box">
                         <div className="taskAll__title">
                             <input
-                                style={{color: el.color.background}}
-                                value={el.title}
-                                onChange={(e) => updateFolderTitle(e.target.value, el.id)}
+                                style={{color: elFolder.color.background}}
+                                value={elFolder.title}
+                                onChange={(e) => updateFolderTitle(e.target.value, elFolder.id)}
                             />
                             <button>
                                 <img src={changeIcon} alt="change icon" className="taskAll__change-icon"/>
@@ -26,8 +27,13 @@ function TasksAll({
                         </div>
                         <div className="taskAll__line"></div>
                         <div className="taskAll__">
-                            {el.tasks.map((el) => {
-                                return <Task el={el} key={el.id}/>
+                            {elFolder.tasks.map((el) => {
+                                return <Task
+                                    el={el}
+                                    key={el.id}
+                                    deleteTask={deleteTask}
+                                    folderId={elFolder.id}
+                                />
                             })}
                         </div>
                     </div>

@@ -3,7 +3,11 @@ import "./Task.css"
 import deleteIcon from "/public/task/delete.svg"
 import {FaCheck} from "react-icons/fa6"
 
-function Task({el}) {
+function Task({
+                  el,
+                  deleteTask,
+                  folderId
+              }) {
     return (
         <div className="task">
             <button
@@ -12,7 +16,12 @@ function Task({el}) {
                          size={11}/>
             </button>
             <p className="task__title">{el.title}</p>
-            <img src={deleteIcon} alt="delete icon" className="task__delete"/>
+            <img
+                src={deleteIcon}
+                alt="delete icon"
+                className="task__delete"
+                onClick={() => deleteTask(folderId, el.id)}
+            />
         </div>
     );
 }

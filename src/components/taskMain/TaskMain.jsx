@@ -11,7 +11,8 @@ function TaskMain({
                       folderSelected,
                       folders,
                       setFolders,
-                      updateFolderTitle
+                      updateFolderTitle,
+                      deleteTask
                   }) {
     const folderMain = folders.find(el => el.id === folderSelected)
     return (
@@ -29,7 +30,12 @@ function TaskMain({
             <div className="taskMain__line"></div>
             <div className="taskMain__">
                 {folderMain.tasks.map((el) => {
-                    return <Task el={el} key={el.id}/>
+                    return <Task
+                        el={el}
+                        key={el.id}
+                        deleteTask={deleteTask}
+                        folderId={folderMain.id}
+                    />
                 })}
             </div>
             {add ? <Added

@@ -16,12 +16,27 @@ function Tasks({
                    setFolders,
                    updateFolderTitle
                }) {
+
+    function deleteTask(folderId, taskId) {
+        setFolders(el =>
+            el.map(folder =>
+                folder.id === folderId
+                    ? {
+                        ...folder,
+                        tasks: folder.tasks.filter(task => task.id !== taskId)
+                    }
+                    : folder
+            )
+        );
+    }
+    
     return (
         <>
             {folderSelected === "all" ?
                 <TasksAll
                     folders={folders}
                     updateFolderTitle={updateFolderTitle}
+                    deleteTask={deleteTask}
                 /> :
                 folderSelected === "" ? <Empty/> :
                 <TaskMain
@@ -31,6 +46,7 @@ function Tasks({
                     folders={folders}
                     setFolders={setFolders}
                     updateFolderTitle={updateFolderTitle}
+                    deleteTask={deleteTask}
                 />
             }
         </>
