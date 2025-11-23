@@ -1,12 +1,50 @@
-import React from "react"
+import React, {useState} from "react"
 import "./Added.css"
 
-function Added({setAdd}) {
+function Added({
+                   add,
+                   setAdd,
+                   folders,
+                   setFolders,
+                   folderMain
+               }) {
+    const [title, setTitle] = useState("")
+
+    function addTask(title, id) {
+        if (title.trim()) {
+            const updated = folders.map(el => {
+                if (!el || !el.tasks) return el;
+
+                if (el.id === id) {
+                    return {
+                        ...el,
+                        tasks: [...el.tasks, {
+                            id: Date.now(),
+                            title,
+                            completed: false
+                        }]
+                    };
+                }
+
+                return el;
+            });
+
+            setFolders(updated);
+            setAdd(false)
+        }
+    };
+
     return (
         <div className="added">
-            <input type="text" className="added__input" placeholder="Текст задачи"/>
+            <input
+                type="text"
+                className="added__input"
+                placeholder="Текст задачи"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+            />
             <div className="added__other">
-                <button onClick={() => setAdd(false)} className="added__add">Добавить задачу</button>
+                <button onClick={() => addTask(title, folderMain.id)} className="added__add">Добавить задачу</button>
                 <button onClick={() => setAdd(false)} className="added__cancel">Отмена</button>
             </div>
         </div>

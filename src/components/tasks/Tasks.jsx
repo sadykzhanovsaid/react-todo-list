@@ -13,14 +13,13 @@ function Tasks({
                    setAdd,
                    folderSelected,
                    folders,
+                   setFolders,
                    updateFolderTitle
                }) {
     return (
         <>
             {folderSelected === "all" ?
                 <TasksAll
-                    add={add}
-                    setAdd={setAdd}
                     folders={folders}
                     updateFolderTitle={updateFolderTitle}
                 /> :
@@ -30,6 +29,7 @@ function Tasks({
                     setAdd={setAdd}
                     folderSelected={folderSelected}
                     folders={folders}
+                    setFolders={setFolders}
                     updateFolderTitle={updateFolderTitle}
                 />
             }

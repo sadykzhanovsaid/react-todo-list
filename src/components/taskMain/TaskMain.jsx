@@ -10,6 +10,7 @@ function TaskMain({
                       setAdd,
                       folderSelected,
                       folders,
+                      setFolders,
                       updateFolderTitle
                   }) {
     const folderMain = folders.find(el => el.id === folderSelected)
@@ -27,14 +28,16 @@ function TaskMain({
             </div>
             <div className="taskMain__line"></div>
             <div className="taskMain__">
-                <Task title="Изучить JavaScript" completed={true}/>
-                <Task title="Изучить паттерны проектирования" completed={false}/>
-                <Task title="ReactJS Hooks (useState, useReducer, useEffect и т.д.)" completed={false}/>
-                <Task title="Redux (redux-observable, redux-saga)" completed={false}/>
+                {folderMain.tasks.map((el) => {
+                    return <Task el={el} key={el.id}/>
+                })}
             </div>
             {add ? <Added
                 add={add}
                 setAdd={setAdd}
+                folders={folders}
+                setFolders={setFolders}
+                folderMain={folderMain}
             /> : <button onClick={() => setAdd(true)} className="taskMain__add">
                 <img src={addIcon} alt="add icon" className="taskMain__add-icon"/>
                 Новая задача

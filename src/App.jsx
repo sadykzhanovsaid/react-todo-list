@@ -56,6 +56,7 @@ function App() {
                 setAdd={setAdd}
                 folderSelected={folderSelected}
                 folders={folders}
+                setFolders={setFolders}
                 updateFolderTitle={updateFolderTitle}
             />
         </>

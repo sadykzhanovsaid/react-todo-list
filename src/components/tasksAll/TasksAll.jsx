@@ -6,8 +6,6 @@ import Added from "../added/Added.jsx"
 import addIcon from "/public/tasks/add.svg"
 
 function TasksAll({
-                      add,
-                      setAdd,
                       folders,
                       updateFolderTitle
                   }) {
@@ -28,10 +26,9 @@ function TasksAll({
                         </div>
                         <div className="taskAll__line"></div>
                         <div className="taskAll__">
-                            <Task title="Изучить JavaScript" completed={true}/>
-                            <Task title="Изучить паттерны проектирования" completed={false}/>
-                            <Task title="ReactJS Hooks (useState, useReducer, useEffect и т.д.)" completed={false}/>
-                            <Task title="Redux (redux-observable, redux-saga)" completed={false}/>
+                            {el.tasks.map((el) => {
+                                return <Task el={el} key={el.id}/>
+                            })}
                         </div>
                     </div>
                 )
