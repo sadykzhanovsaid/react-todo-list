@@ -5,4 +5,10 @@ textarea {
     outline: none;
     resize: none;
     overflow: hidden;
+
+    color: rgba(0, 0, 0, 1);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
 }
