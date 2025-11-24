@@ -7,6 +7,7 @@ import addIcon from "/public/tasks/add.svg"
 
 function TasksAll({
                       folders,
+                      setFolders,
                       updateFolderTitle,
                       deleteTask,
                       toggleTaskCompleted
@@ -32,6 +33,8 @@ function TasksAll({
                                 return <Task
                                     el={el}
                                     key={el.id}
+                                    folders={folders}
+                                    setFolders={setFolders}
                                     deleteTask={deleteTask}
                                     folderId={elFolder.id}
                                     toggleTaskCompleted={toggleTaskCompleted}

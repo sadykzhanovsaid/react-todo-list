@@ -1,0 +1,8 @@
+textarea {
+    padding-top: 3px;
+    width: 90%;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+}

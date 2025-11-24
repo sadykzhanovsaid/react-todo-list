@@ -34,6 +34,8 @@ function TaskMain({
                     return <Task
                         el={el}
                         key={el.id}
+                        folders={folders}
+                        setFolders={setFolders}
                         deleteTask={deleteTask}
                         folderId={folderMain.id}
                         toggleTaskCompleted={toggleTaskCompleted}

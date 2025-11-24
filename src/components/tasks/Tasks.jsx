@@ -52,6 +52,7 @@ function Tasks({
             {folderSelected === "all" ?
                 <TasksAll
                     folders={folders}
+                    setFolders={setFolders}
                     updateFolderTitle={updateFolderTitle}
                     deleteTask={deleteTask}
                     toggleTaskCompleted={toggleTaskCompleted}
