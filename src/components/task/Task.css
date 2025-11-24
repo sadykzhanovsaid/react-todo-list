@@ -6,6 +6,7 @@
 }
 
 .task__completed {
+    padding-top: 5px;
     min-width: 20px;
     height: 20px;
     position: relative;
@@ -37,6 +38,7 @@
 }
 
 .task__completed-active {
+    padding-top: 5px
     transition: all 0.1s ease;
     min-width: 20px;
     height: 20px;
