@@ -8,4 +8,8 @@ The application is written in ReactJS, the data is saved in localstorage. There 
 - Changing completed failed 
 - Deleting a task
 
+Link: 
+https://www.figma.com/design/OP7oFTNqV8tPZyh2zSgCaX/Todo-ReactJS?node-id=0-1&p=f&t=EKfZ9yGDRgCcsMbs-0
+
 <img src="public/site.png"/>
+
